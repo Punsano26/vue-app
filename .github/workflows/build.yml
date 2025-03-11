@@ -3,7 +3,7 @@ name: 'build and deploy docker image'
 on:
   push:
     tags:
-      - '*'  # Trigger เมื่อ push tag ใด ๆ
+      - '*' # Trigger เมื่อ push tag ใด ๆ
 
 jobs:
   release-docker-image-job:
@@ -24,8 +24,8 @@ jobs:
       - name: Build and push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: vue-app  # ไม่ต้องใส่ naruapon ซ้ำ
-          registry: ghcr.io/punsao26
+          image: vue-app # ไม่ต้องใส่ naruapon ซ้ำ
+          registry: ghcr.io/punsano26
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           tags: ${{ env.TAG_NAME }}, latest
